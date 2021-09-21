@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class questionTwoThree {
@@ -77,5 +76,7 @@ public class questionTwoThree {
         {
             System.out.println("The two line segments are neither perpendicular or parallel");
         }
+
+        input.close();
     }
 }

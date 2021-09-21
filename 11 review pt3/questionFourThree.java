@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class questionOneFour {
+public class questionFourThree {
     public static double discriminant (double a, double b, double c)
     {
         return (Math.pow(b, 2) - (4 * a * c));
@@ -52,8 +52,10 @@ public class questionOneFour {
         double b = Double.parseDouble(input.nextLine());
         System.out.print("Enter the : ");
         double c = Double.parseDouble(input.nextLine());
-        System.out.print("Constant: " + discriminant(a, b, c));
+        System.out.println("Constant: " + discriminant(a, b, c));
         System.out.println("Number of solutions: " + numSolutions(a, b, c));
         solutions(a, b, c);
+
+        input.close();
     }
 }
