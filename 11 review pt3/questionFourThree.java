@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class questionFourThree {
@@ -24,23 +25,33 @@ public class questionFourThree {
 
     public static void solutions(double a, double b, double c)
     {
+        DecimalFormat df = new DecimalFormat("#.##");
         if(numSolutions(a, b, c) == 2)
         {   
             System.out.print("Solutions: ");
-            System.out.print( (-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2*a));
-            System.out.print(" ,");
-            System.out.println( (-b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2*a));
+            System.out.print(df.format((-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2*a)));
+            System.out.print(", ");
+            System.out.println(df.format((-b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2*a)));
         }
         else if(numSolutions(a, b, c) == 1)
         {
             System.out.print("Solutions: ");
-            System.out.println( (-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2*a));
+            System.out.println(df.format((-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2*a)));
         }
         else
         {
             System.out.println("There are no solutions to this equation.");
         }
 
+    }
+
+    public static boolean isFactorable (double a, double b, double c)
+    {
+        if((Math.sqrt(discriminant(a, b, c))) % 1 == 0)
+        {
+            return true;
+        } 
+        return false;
     }
 
     public static void main (String args[])
@@ -55,6 +66,14 @@ public class questionFourThree {
         System.out.println("Constant: " + discriminant(a, b, c));
         System.out.println("Number of solutions: " + numSolutions(a, b, c));
         solutions(a, b, c);
+        if(isFactorable(a, b, c) == true)
+        {
+            System.out.println("This equation is factorable");
+        }
+        else{
+            System.out.println("This equation is not factorable");
+        }
+        
 
         input.close();
     }
