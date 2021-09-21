@@ -57,15 +57,20 @@ public class questionFourThree {
     public static void main (String args[])
     {
         Scanner input = new Scanner(System.in);
+
         System.out.print("Enter the x^2 coefficient: ");
         double a = Double.parseDouble(input.nextLine());
+
         System.out.print("Enter the x coefficient: ");
         double b = Double.parseDouble(input.nextLine());
+
         System.out.print("Enter the constant: ");
         double c = Double.parseDouble(input.nextLine());
+
         System.out.println("Discriminant: " + discriminant(a, b, c));
         System.out.println("Number of solutions: " + numSolutions(a, b, c));
         solutions(a, b, c);
+
         if(isFactorable(a, b, c) == true)
         {
             System.out.println("This equation is factorable");
@@ -74,7 +79,6 @@ public class questionFourThree {
             System.out.println("This equation is not factorable");
         }
         
-
         input.close();
     }
 }

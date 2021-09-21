@@ -31,20 +31,26 @@ public class questionTwoThree {
         System.out.println("Please enter the coordinates of two points on line segment 1: ");
         System.out.println("Point A x-value: ");
         x1 = Integer.parseInt(input.nextLine());
+
         System.out.println("Point A y-value: ");
         y1 = Integer.parseInt(input.nextLine());
+
         System.out.println("Point B x-value: ");
         x2 = Integer.parseInt(input.nextLine());
+
         System.out.println("Point B y-value: ");
         y2 = Integer.parseInt(input.nextLine());
 
         System.out.println("Please enter the coordinates of two points on line segment 2: ");
         System.out.println("Point C x-value: ");
         x3 = Integer.parseInt(input.nextLine());
+
         System.out.println("Point C y-value: ");
         y3 = Integer.parseInt(input.nextLine());
+
         System.out.println("Point D x-value: ");
         x4 = Integer.parseInt(input.nextLine());
+        
         System.out.println("Point D y-value: ");
         y4 = Integer.parseInt(input.nextLine());
 
