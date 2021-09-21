@@ -61,9 +61,9 @@ public class questionFourThree {
         double a = Double.parseDouble(input.nextLine());
         System.out.print("Enter the x coefficient: ");
         double b = Double.parseDouble(input.nextLine());
-        System.out.print("Enter the : ");
+        System.out.print("Enter the constant: ");
         double c = Double.parseDouble(input.nextLine());
-        System.out.println("Constant: " + discriminant(a, b, c));
+        System.out.println("Discriminant: " + discriminant(a, b, c));
         System.out.println("Number of solutions: " + numSolutions(a, b, c));
         solutions(a, b, c);
         if(isFactorable(a, b, c) == true)
