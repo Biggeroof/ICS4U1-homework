@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class questionTwoThree {
+public class questionThreeThree {
     
     public static double calcSlope (double x1, double y1, double x2, double y2)
     {        
