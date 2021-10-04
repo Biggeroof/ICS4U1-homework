@@ -4,7 +4,7 @@ public class questionThreeOneTwo
     {
         int lenr = arr.length;
         int lenc;
-        //System.out.print("[ ");
+        System.out.print("[ ");
         for(int i = 0; i < lenr - 1; i++)
         {
             System.out.print("[");
@@ -25,8 +25,7 @@ public class questionThreeOneTwo
                 System.out.print(arr[lenr - 1][j] + ", ");
             }
         System.out.print(arr[lenr - 1][lenc - 1]);
-        //add bracket back here later
-        System.out.print("] ");
+        System.out.print("] ]");
         System.out.println();
     }
 
