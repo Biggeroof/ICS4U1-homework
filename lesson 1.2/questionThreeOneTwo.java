@@ -100,7 +100,7 @@ public class questionThreeOneTwo
         System.out.println();
 
         System.out.println("Rotating the array by 90 degrees clockwise:");
-        int rotated[][] = rotate(arr);
+        int[][] rotated = rotate(arr);
         printArray(rotated);
     }
     
