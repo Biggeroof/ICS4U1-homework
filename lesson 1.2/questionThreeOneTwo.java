@@ -82,24 +82,25 @@ public class questionThreeOneTwo
         {9, 1, 0, 2, 7},
         {0, 2, 6, 4, -1} };
 
-        System.out.println("Swapping rows 1 and 2");
+        System.out.println("Swapping rows 1 and 2:");
         swapRow(arr, 0, 1);
         printArray(arr);
 
         System.out.println();
 
-        System.out.println("Swapping columns 1 and 2");
+        System.out.println("Swapping columns 1 and 2:");
         swapColumn(arr, 0, 1);
         printArray(arr);
 
         System.out.println();
 
-        System.out.println("Multiplying row 2 by 2");
+        System.out.println("Multiplying row 2 by 2:");
         multiplyRow(arr, 1, 2);
         printArray(arr);
 
         System.out.println();
 
+        System.out.println("Rotating the array by 90 degrees clockwise:");
         int rotated[][] = rotate(arr);
         printArray(rotated);
     }
