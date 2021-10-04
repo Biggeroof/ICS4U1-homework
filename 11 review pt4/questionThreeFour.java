@@ -16,7 +16,6 @@ public class questionThreeFour {
             {
                 add = Integer.parseInt(numbers.substring(i - 2, i));
                 total += add;
-                
             }
         }
         else
