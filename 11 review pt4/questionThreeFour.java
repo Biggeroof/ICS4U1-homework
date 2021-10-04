@@ -27,7 +27,7 @@ public class questionThreeFour {
                 total += add;
             }
             
-            add = Integer.parseInt(numbers.substring(len - 1, len));
+            add = Integer.parseInt(numbers.substring(len - 1));
             total += add;
         }
         System.out.print("Output: ");
