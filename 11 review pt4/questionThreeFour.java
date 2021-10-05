@@ -7,8 +7,7 @@ public class questionThreeFour {
         System.out.print("Input: ");
         String numbers = input.nextLine();
         int total = 0;
-        int add;
-        int len = numbers.length();
+
 		
 		if(numbers.length() % 2 == 0)
 		{
