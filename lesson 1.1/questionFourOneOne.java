@@ -16,13 +16,13 @@ public class questionFourOneOne
             stringPhrase[i] = Character.toString(phrase.charAt(i));
         }
 
-        System.out.println("Enter an integer: ");
+        System.out.print("Enter an integer: ");
         int n = Integer.parseInt(input.nextLine());
         String[] arr = new String[n];
 
         for(int i = 0; i < n; i++)
         {
-            System.out.println("Enter a string: ");
+            System.out.print("Enter a string: ");
             arr[i] = input.nextLine();
         }
 

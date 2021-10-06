@@ -81,6 +81,11 @@ public class questionThreeOneTwo
         {9, 1, 0, 2, 7},
         {0, 2, 6, 4, -1} };
 
+        System.out.println("Orginal array: ");
+        printArray(arr);
+
+        System.out.println();
+
         System.out.println("Swapping rows 1 and 2:");
         swapRow(arr, 0, 1);
         printArray(arr);
