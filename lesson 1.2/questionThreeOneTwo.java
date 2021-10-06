@@ -1,4 +1,4 @@
-public class questionThreeOneTwo 
+public class QuestionThreeOneTwo
 {
     public static void printArray(int[][] arr)
     {
@@ -63,13 +63,21 @@ public class questionThreeOneTwo
         //length variables for the rotated array
         int lenr = arr[0].length;   
         int lenc = arr.length;
-        int[][] rotated = new int[lenr][lenc];
+        int[][] temp = new int[lenr][lenc];
+        int[][] rotated = new int [lenr][lenc];
 
         for(int i = 0; i < lenr; i++)
         {
-            for(int j = 0; j < lenc; j++)
+            for(int j = lenc - 1; j >= 0; j--)
             {
-                rotated[i][j] = arr[j][i];
+                temp[i][j] = arr[j][i];
+            }
+        }
+        for(int i = 0; i < lenr; i++)
+        {
+            for(int j = lenc - 1; j >= 0; j--)
+            {
+                rotated[i][j] = temp[i][lenc - (j + 1)];
             }
         }
         return rotated;
@@ -80,29 +88,39 @@ public class questionThreeOneTwo
         {1, 4, 4, 8, 13},
         {9, 1, 0, 2, 7},
         {0, 2, 6, 4, -1} };
+        
+        // int[][] arr = { {0, 1, 9},
+        // {4, 4, 1},
+        // {15, 6, 9},
+        // {6, 2, 0}, 
+        // {8, 9, 2}
+        // };
+        
+        
 
         System.out.println("Orginal array: ");
         printArray(arr);
 
         System.out.println();
+        
+        //uncomment these as you need
+        // System.out.println("Swapping rows 1 and 2:");
+        // swapRow(arr, 0, 1);
+        // printArray(arr);
 
-        System.out.println("Swapping rows 1 and 2:");
-        swapRow(arr, 0, 1);
-        printArray(arr);
+        // System.out.println();
 
-        System.out.println();
+        // System.out.println("Swapping columns 1 and 2:");
+        // swapColumn(arr, 0, 1);
+        // printArray(arr);
 
-        System.out.println("Swapping columns 1 and 2:");
-        swapColumn(arr, 0, 1);
-        printArray(arr);
+        // System.out.println();
 
-        System.out.println();
+        // System.out.println("Multiplying row 2 by 2:");
+        // multiplyRow(arr, 1, 2);
+        // printArray(arr);
 
-        System.out.println("Multiplying row 2 by 2:");
-        multiplyRow(arr, 1, 2);
-        printArray(arr);
-
-        System.out.println();
+        // System.out.println();
 
         System.out.println("Rotating the array by 90 degrees clockwise:");
         int[][] rotated = rotate(arr);
