@@ -5,6 +5,7 @@ public class questionTwoOneThree
 {
     public static ArrayList<String> getStringList() 
     {
+        //same thing as q1 but for strings
         ArrayList<String> arr = new ArrayList<String>();
         Scanner input = new Scanner(System.in);
         String phr = "a";
@@ -25,7 +26,7 @@ public class questionTwoOneThree
     public static int[] lengthsOfStrings(ArrayList<String> arr) 
     {
         int[] lengths = new int[arr.size()];
-
+        //iterate through entire array and add the lengths of the strings at i to the lengths array
         for(int i = 0; i < arr.size(); i++)
         {
             lengths[i] = arr.get(i).length();
@@ -65,17 +66,24 @@ public class questionTwoOneThree
     {
         Scanner input = new Scanner(System.in);
         ArrayList<String> arr2 = arr;
-
+        //iterate through entire array checking for the user inputted string
         for(int i =0; i < arr.size(); i++)
         {
             if(arr2.get(i).equals(remove))
             {
+                //if found remove
                 arr2.remove(i);
                 return arr2;
             }
         }
         System.out.println("Could not find this string. Please enter the index instead(starting from 1): ");
+        //ask for index and remove at that index (if not found throw error and return arr 2 with no changes)
         int index = Integer.parseInt(input.nextLine());
+        if(index > arr2.size())
+        {
+            System.out.println("index doesent exist");
+            return arr2;
+        }
         arr2.remove(index - 1);
         return arr2;
         
@@ -108,7 +116,9 @@ public class questionTwoOneThree
         System.out.println("Enter a phrase you would like to remove from the list: ");
         String remove = input.nextLine();
         ArrayList<String> arr2 = removeFromList(arr, remove);
-        System.out.println("removed!");
+
+        //could make a bool here to check if the array matches if you dont want print here because nothing changed
+        System.out.print("removed!");
         System.out.println();
         printList(arr);
     }

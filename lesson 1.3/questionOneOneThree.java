@@ -14,8 +14,10 @@ public class questionOneOneThree
         {
             System.out.print("Enter an integer: ");
             number = input.nextLine();
+            //checks if the input is a space
             if(number.equals(" "))
             {
+                //exit if space
                 break;
             }
             arr.add(Integer.parseInt(number));
@@ -67,10 +69,12 @@ public class questionOneOneThree
         }
         if((len + 1 ) % 2 == 0)
         {
+            //if mod 2 is 0 then avg 2 values in middle 1, 2, 3, 4         2 + 3 = 5, 5 / 2 = 2.5
             median = (double)((arr.get(len / 2)) + (arr.get(len / 2 + 1))) / 2;
         }
         else
         {
+            //get value in middle of array
             median = arr.get((len / 2));
         }
         return median;
@@ -91,6 +95,7 @@ public class questionOneOneThree
     {
         int occurences = 0;
 
+        //iterate through entire array, if number appears twice return true if not return false
         for (Integer i : arr) 
         {
             if(i == num)
@@ -111,16 +116,18 @@ public class questionOneOneThree
         boolean duplicate = false;
         ArrayList<Integer> combined = new ArrayList<Integer>();
 
+        //iterate through original array 1 to add elements
         for(int i = 0; i < arr1.size(); i++)
         {
             duplicate = false;
+            //iterare through the entire combined array to check for identical elements
             for(int j = 0; j < combined.size(); j++)
             {
+                //if any elements from array i match j dont add them
                 if(arr1.get(i) == combined.get(j))
                 {
                     duplicate = true;
                     break;
-                    
                 }
             }
             if(!(duplicate == true))
@@ -129,6 +136,7 @@ public class questionOneOneThree
             }
         }
 
+        //do the same for 2nd array
         for(int i = 0; i < arr2.size(); i++)
         {
             duplicate = false;
@@ -139,7 +147,6 @@ public class questionOneOneThree
                     System.out.println("here");
                     duplicate = true;
                     break;
-                    
                 }
             }
             if(!(duplicate == true))
