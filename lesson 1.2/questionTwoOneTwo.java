@@ -15,29 +15,29 @@ public class questionTwoOneTwo
 
     public static void printArray(int[][] arr)
     {
-        int lenr = arr.length;
-        int lenc = arr[lenr - 1].length;
+        int lenr = arr.length - 1;
+        int lenc;
         System.out.print("[ ");
-        for(int i = 0; i < lenr - 1; i++)
+        for(int i = 0; i < lenr; i++)
         {
             System.out.print("[");
-            lenc = arr[i].length;
-            for(int j = 0; j < lenc - 1; j++)
+            lenc = arr[i].length - 1;
+            for(int j = 0; j < lenc; j++)
             {
                 System.out.print(arr[i][j] + ", ");
             }
-            System.out.print(arr[i][lenc - 1]);
+            System.out.print(arr[i][lenc]);
             System.out.println("],");
         }
 
-        lenc = arr[lenr - 1].length;
+        lenc = arr[lenr].length - 1;
 
         System.out.print("[");
-        for(int j = 0; j < lenc - 1; j++)
+        for(int j = 0; j < lenc; j++)
             {
-                System.out.print(arr[lenr - 1][j] + ", ");
+                System.out.print(arr[lenr][j] + ", ");
             }
-        System.out.print(arr[lenr - 1][lenc - 1]);
+        System.out.print(arr[lenr][lenc]);
         System.out.print("] ]");
         System.out.println();
     }
