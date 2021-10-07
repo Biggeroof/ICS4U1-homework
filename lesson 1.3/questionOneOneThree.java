@@ -15,7 +15,7 @@ public class questionOneOneThree
             System.out.print("Enter an integer: ");
             number = input.nextLine();
             //checks if the input is a space
-            if(number.equals(" "))
+            if(number.equals(" ") || number.equals("")
             {
                 //exit if space
                 break;
