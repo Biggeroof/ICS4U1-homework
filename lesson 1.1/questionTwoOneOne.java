@@ -8,8 +8,10 @@ public class questionTwoOneOne
         int[] clone = new int[8];
         int index = 0;
 
+        //iterate backwards down original array
         for(int i = arr.length - 1; i >= 0; i--)
         {
+            //put in clone array backwards
             clone[index] = arr[i];
             index++;
         }
