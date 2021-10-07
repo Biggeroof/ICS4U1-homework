@@ -111,7 +111,5 @@ public class questionTwoOneThree
         System.out.println("removed!");
         System.out.println();
         printList(arr);
-
-
     }
 }
