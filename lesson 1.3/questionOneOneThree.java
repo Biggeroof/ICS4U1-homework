@@ -15,7 +15,7 @@ public class questionOneOneThree
             System.out.print("Enter an integer: ");
             number = input.nextLine();
             //checks if the input is a space
-            if(number.equals(" "))
+            if(number.equals(" ") || number.equals(""))
             {
                 //exit if space
                 break;
@@ -130,7 +130,7 @@ public class questionOneOneThree
                     break;
                 }
             }
-            if(!(duplicate == true))
+            if(!(duplicate))
             {
                 combined.add(arr1.get(i));
             }
@@ -144,12 +144,11 @@ public class questionOneOneThree
             {
                 if(arr2.get(i) == combined.get(j))
                 {
-                    System.out.println("here");
                     duplicate = true;
                     break;
                 }
             }
-            if(!(duplicate == true))
+            if(!(duplicate))
             {
                 combined.add(arr2.get(i));
             }

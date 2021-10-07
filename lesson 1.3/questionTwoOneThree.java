@@ -14,7 +14,7 @@ public class questionTwoOneThree
         {
             System.out.print("Enter a string: ");
             phr = input.nextLine();
-            if(phr.equals(" "))
+            if(phr.equals(" ") || phr.equals(""))
             {
                 break;
             }
