@@ -87,6 +87,7 @@ public class questionThreeOneTwo
             for(int j = 0; j < lenc; j++)
             {
                 //swap the rows and columns (start from back of the row of original array)
+                //ex (0, 0) becomes (0, 3) and (1, 2) becomes (2, 2)
                 rotated[i][lenc - (j + 1)] = arr[j][i];
             }
         }
