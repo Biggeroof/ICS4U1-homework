@@ -2,6 +2,7 @@ public class Fraction
 {
     private int numerator;
     private int denominator;
+    //constructors
     public Fraction(int numerator, int denominator)
     {
         this.numerator = numerator;
@@ -43,6 +44,7 @@ public class Fraction
         this.denominator = denom /gcd;
     }
 
+    //accessors and mutators
     public void setDenominator(int denominator)
     {
         this.denominator = denominator;
@@ -69,6 +71,7 @@ public class Fraction
         this.numerator = numerator;
     }
 
+    //instance methods
     public double toDecimal()
     {
         return (double) numerator / denominator;
@@ -82,6 +85,7 @@ public class Fraction
     public Fraction multiply(Fraction other)
     {
         Fraction multiply = new Fraction(this.numerator * other.numerator, this.denominator * other.denominator);
+        multiply.reduce();
         return multiply;
     }
 
@@ -89,13 +93,14 @@ public class Fraction
     public Fraction add(Fraction other)
     {
         Fraction add = new Fraction(((this.numerator * other.denominator) + (other.numerator * this.denominator)), (this.denominator * other.denominator));
+        add.reduce();
         return add;
     }
 
-    public int gcd(int numerator, int demoninator)
+    public int gcd(int numerator, int denominator)
     {
         int a = numerator;
-        int b = demoninator;
+        int b = denominator;
         if(a == 0)
         {
             return b;
@@ -129,6 +134,51 @@ public class Fraction
             return true;
         }
         return false;
-
     }
+
+    public void timesEquals(Fraction other) 
+    {
+        numerator  *= other.numerator;
+        denominator *= other.denominator;
+        reduce();    
+    }
+
+    public void plusEquals(Fraction other)
+    {
+        numerator = (this.numerator * other.denominator) + (other.numerator * this.denominator); 
+        denominator = (this.denominator * other.denominator);
+        reduce();
+    }
+
+    public void integerMultiply(int k)
+    {
+        this.numerator *= k;
+        reduce();
+    }
+    
+    public void reduce()
+    {
+        int gcd = gcd(numerator, denominator);
+        numerator = numerator / gcd;
+        denominator = denominator / gcd;
+
+        if(denominator < 0 || (denominator < 0 && numerator < 0))
+        {
+            denominator *= -1;
+            numerator *= -1;
+        }
+    }
+
+    public Fraction reciprocal()
+    {
+        Fraction reciprocal = new Fraction(denominator, numerator);
+        return reciprocal;
+    }
+
+    public Fraction divide(Fraction other)
+    {
+        Fraction divided = multiply(other.reciprocal());
+        return divided;
+    }
+
 }
