@@ -34,7 +34,7 @@ public class Fraction
         int denom = 1;
 
         for (int i = 0; i < len; i++) {
-            decimal *= 10;    
+            decimal *= 10;
             denom *= 10;
         }
 
@@ -136,16 +136,16 @@ public class Fraction
         return false;
     }
 
-    public void timesEquals(Fraction other) 
+    public void timesEquals(Fraction other)
     {
         numerator  *= other.numerator;
         denominator *= other.denominator;
-        reduce();    
+        //reduce();
     }
 
     public void plusEquals(Fraction other)
     {
-        numerator = (this.numerator * other.denominator) + (other.numerator * this.denominator); 
+        numerator = (this.numerator * other.denominator) + (other.numerator * this.denominator);
         denominator = (this.denominator * other.denominator);
         reduce();
     }
@@ -155,7 +155,7 @@ public class Fraction
         this.numerator *= k;
         reduce();
     }
-    
+
     public void reduce()
     {
         int gcd = gcd(numerator, denominator);
@@ -180,5 +180,4 @@ public class Fraction
         Fraction divided = multiply(other.reciprocal());
         return divided;
     }
-
 }
