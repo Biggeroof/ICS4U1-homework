@@ -31,18 +31,18 @@ public class Fraction
     {
         String s = String.valueOf(decimal);
         int len = s.length() - 1 - s.indexOf('.');
-        int denom = 1;
+        //int denom = 1;
 
-        for (int i = 0; i < len; i++)
-        {
-            decimal *= 10;
-            denom *= 10;
-        }
+        // for (int i = 0; i < len; i++)
+        // {
+        //     decimal *= 10;
+        //     denom *= 10;
+        // }
 
-        int num = (int) Math.round(decimal);
-        int gcd = gcd(num, denom);
-        this.numerator = num / gcd;
-        this.denominator = denom /gcd;
+        numerator = (int)(decimal * Math.pow(10, len));
+        denominator = (int)Math.pow(10, len);
+
+        reduce();
     }
 
     //accessors and mutators

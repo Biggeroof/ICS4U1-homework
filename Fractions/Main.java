@@ -6,6 +6,9 @@ public class Main {
         Fraction g = new Fraction(7, 10);
         System.out.println("g: " + g);
 
+        Fraction test = new Fraction(-8.343);
+        System.out.println(test);
+
         System.out.println("is f greater than g?: " + f.greaterThan(g));
         //Fraction multiply = f.multiply(g);
         System.out.println("Product of " + f + " and " + g + ": " + Fraction.product(f, g));
