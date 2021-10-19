@@ -33,7 +33,8 @@ public class Fraction
         int len = s.length() - 1 - s.indexOf('.');
         int denom = 1;
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++)
+        {
             decimal *= 10;
             denom *= 10;
         }
@@ -158,10 +159,14 @@ public class Fraction
     public void reduce()
     {
         int gcd = gcd(numerator, denominator);
-        numerator = numerator / gcd;
-        denominator = denominator / gcd;
+        if(gcd != 0)
+        {
+            numerator = numerator / gcd;
+            denominator = denominator / gcd;
+        }
 
-        if(denominator < 0 || (denominator < 0 && numerator < 0))
+
+        if((denominator < 0) || (denominator < 0 && numerator < 0))
         {
             denominator *= -1;
             numerator *= -1;
@@ -180,9 +185,9 @@ public class Fraction
         return divided;
     }
     public static Fraction product(Fraction f1, Fraction f2)
-{
-    return f1.multiply(f2);
-}
+    {
+        return f1.multiply(f2);
+    }
 
     public static Fraction sum(Fraction f1, Fraction f2)
     {
@@ -191,14 +196,25 @@ public class Fraction
 
     public static Fraction difference(Fraction f1, Fraction f2)
     {
-        //Fraction subtract = new Fraction(f2.getNumerator(), f2.getDenominator());
-        //Fraction subtract = f2;
+        Fraction total = new Fraction(f2.getNumerator(), f2.getDenominator());
+
+        //Fraction total = f2;
         //this is a reference to f2, so it mutates f2 (won't work)
 
-        //subtract.setNumerator(subtract.getNumerator() * -1);
-        f2.integerMultiply(-1);
-        Fraction total = new Fraction(f1.add(f2));
-        f2.integerMultiply(-1);
+        total.setNumerator(total.getNumerator() * -1);
+
+
+        //i dont know why but this is broken
+        //f2.integerMultiply(-1);
+        //Fraction total = new Fraction(f1.add(f2));
+        //System.out.println(total);
+        //f2.integerMultiply(-1);
+        //total.reduce();
+        //return total;
+
+        total = f1.add(total);
+        total.reduce();
+
         return total;
     }
 
