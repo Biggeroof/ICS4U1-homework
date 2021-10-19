@@ -140,7 +140,7 @@ public class Fraction
     {
         numerator  *= other.numerator;
         denominator *= other.denominator;
-        //reduce();
+        reduce();
     }
 
     public void plusEquals(Fraction other)
