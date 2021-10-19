@@ -89,7 +89,6 @@ public class Fraction
         return multiply;
     }
 
-    //does it without caring about the gcf so no simplifying
     public Fraction add(Fraction other)
     {
         Fraction add = new Fraction(((this.numerator * other.denominator) + (other.numerator * this.denominator)), (this.denominator * other.denominator));
@@ -179,5 +178,32 @@ public class Fraction
     {
         Fraction divided = multiply(other.reciprocal());
         return divided;
+    }
+    public static Fraction product(Fraction f1, Fraction f2)
+{
+    return f1.multiply(f2);
+}
+
+    public static Fraction sum(Fraction f1, Fraction f2)
+    {
+        return f1.add(f2);
+    }
+
+    public static Fraction difference(Fraction f1, Fraction f2)
+    {
+        //Fraction subtract = new Fraction(f2.getNumerator(), f2.getDenominator());
+        //Fraction subtract = f2;
+        //this is a reference to f2, so it mutates f2 (won't work)
+
+        //subtract.setNumerator(subtract.getNumerator() * -1);
+        f2.integerMultiply(-1);
+        Fraction total = new Fraction(f1.add(f2));
+        f2.integerMultiply(-1);
+        return total;
+    }
+
+    public static Fraction quotient(Fraction f1, Fraction f2)
+    {
+        return f1.divide(f2);
     }
 }
