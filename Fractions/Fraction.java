@@ -122,6 +122,7 @@ public class Fraction
         }
         if(denominator < 0)
         {
+             //redundant (it's going to always be reduced and checked so this shouldn't happen)
             return (numerator*-1 + "/" + denominator*-1);
         }
         return numerator + "/" + denominator;
