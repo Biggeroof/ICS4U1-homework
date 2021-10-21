@@ -4,7 +4,8 @@ public class Circle
     private double centerY;
     private double radius;
 
-    //mutators, accessors, and constructors
+    //constructors
+    //empty constructor sets the center to (0,0) and the radius to 1
     public Circle()
     {
         centerX = 0;
@@ -12,6 +13,7 @@ public class Circle
         radius = 1;
     }
 
+    //constructor with all fields
     public Circle(double centerX, double centerY, double radius)
     {
         this.centerX = centerX;
@@ -20,6 +22,7 @@ public class Circle
         this.radius = Math.abs(radius);
     }
 
+    //constructor to copy another circle
     public Circle(Circle other)
     {
         this.centerX = other.centerX;
@@ -27,6 +30,7 @@ public class Circle
         this.radius = other.radius;
     }
 
+    //accessors and mutators
     public double getCenterX()
     {
         return centerX;
@@ -147,6 +151,7 @@ public class Circle
 
     }
 
+    //overriding the default toString
     @Override
     public String toString()
     {
