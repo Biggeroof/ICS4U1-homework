@@ -198,13 +198,13 @@ public class BankAccounts {
 
             else if(option == 8)
             {
-                System.out.println("Thank you for using the bank account program\n");
+                System.out.println("Thank you for using the bank account program!\n");
                 break;
             }
 
             else
             {
-                System.out.println("Invalid option, please enter again \n");
+                System.out.println("Invalid option, please enter again.");
             }
         }
         
