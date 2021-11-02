@@ -194,6 +194,7 @@ public class BankAccounts {
                         done = true;
                     }
                 }
+                System.out.println();
             }
 
             else if(option == 8)
