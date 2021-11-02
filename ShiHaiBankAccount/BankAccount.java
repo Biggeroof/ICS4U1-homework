@@ -43,24 +43,20 @@ public class BankAccount
         System.out.printf("Your balance is: %.2f \n\n", balance);
     }
 
-    public double withdraw(double amount)
+    public void withdraw(double amount)
     {
         balance -= amount;
-        return balance;
-
     }
 
-    public double deposit(double amount)
+    public void deposit(double amount)
     {
         balance += amount;
-        return balance;
     }
 
-    public double transfer(double amount, BankAccount other)
+    public void transfer(double amount, BankAccount other)
     {
         this.balance -= amount;
         other.balance += amount;
-        return amount;
     }
 
     public double calculateInterest(int months, int period)
