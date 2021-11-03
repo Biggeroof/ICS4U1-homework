@@ -5,6 +5,13 @@ public class BankAccount
     private String accountNumber;
     private double interest;
 
+    /**
+     * 
+     * @param name
+     * @param balance
+     * @param accountNumber
+     * @param interest
+     */
     public BankAccount(String name, double balance, String accountNumber, double interest)
     {
         this.name = name;
@@ -62,9 +69,10 @@ public class BankAccount
     public double calculateInterest(int months, int period)
     {
         //compound interest
-        double gainedInterest = balance * Math.pow((1 + ((interest / 100) / period)), period * months / 12);
-        deposit(balance - gainedInterest);
-        return gainedInterest;
+        double balanceInterest = balance * Math.pow((1 + ((interest / 100) / period)), period * months / 12);
+        double interestGain = balanceInterest - balance;
+        deposit(balanceInterest - balance);
+        return interestGain;
 
         //add that interest to the account
 
