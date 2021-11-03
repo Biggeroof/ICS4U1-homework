@@ -39,6 +39,11 @@ public class BankAccounts {
         System.out.println("Do account one and two have the same balance and interest rate?: " + accountOne.equals(accountTwo));
         System.out.println("Do account two and three have the same balance and interest rate?: " + accountTwo.equals(accountThree));
 
+        System.out.println("The current interest rate on account 1 is " + accountOne.getInterest() + ". This will be changed to 2.72%");
+        accountOne.setInterest(2.72);
+        System.out.println("The interest rate on account 1 is now " + accountOne.getInterest() + "\n");
+
+
         while(!done)
         {
             System.out.print("Choose which account you would like to access: ");
@@ -58,18 +63,24 @@ public class BankAccounts {
         while(true)
         {
             System.out.println("Please enter what you would like to do: ");
-            System.out.println("1. Change name on account");
+            System.out.println("1. Check current account details");
+            System.out.println("2. Change name on account");
             System.out.println("2. Check current balance");
-            System.out.println("3. Withdraw money");
-            System.out.println("4. Deposit money");
-            System.out.println("5. Transfer money to another account");
-            System.out.println("6. Calculate balance after compounded interest for a certain period of time");
-            System.out.println("7. Change accounts");
-            System.out.println("8. Exit");
+            System.out.println("4. Withdraw money");
+            System.out.println("5. Deposit money");
+            System.out.println("6. Transfer money to another account");
+            System.out.println("7. Calculate balance after compounded interest for a certain period of time");
+            System.out.println("8. Change accounts");
+            System.out.println("9. Exit");
 
             option = Integer.parseInt(input.nextLine());
 
             if(option == 1)
+            {
+                System.out.println(array[access - 1]);
+            }
+
+            else if(option == 2)
             {
                 System.out.println("The current name on account is " + array[access - 1].getName() + ". Are you sure you want to change this?");
                 choice = input.nextLine();
@@ -110,7 +121,7 @@ public class BankAccounts {
 
             }
 
-            else if(option == 2)
+            else if(option == 3)
             {
                 array[access - 1].checkBalance();
                 // if(access == 1)
@@ -127,7 +138,7 @@ public class BankAccounts {
                 // }
             }
 
-            else if(option == 3)
+            else if(option == 4)
             {
                 System.out.print("Please enter the amount to be withdrawn: ");
                 amount = Double.parseDouble(input.nextLine());
@@ -150,7 +161,7 @@ public class BankAccounts {
                 // }
             }
 
-            else if(option == 4)
+            else if(option == 5)
             {
                 System.out.print("Please enter the amount to be deposited: ");
                 amount = Double.parseDouble(input.nextLine());
@@ -173,11 +184,11 @@ public class BankAccounts {
                 // }
             }
 
-            else if(option == 5)
+            else if(option == 6)
             {
                 System.out.print("Please enter the account you would like to transfer to: ");
                 account = Integer.parseInt(input.nextLine());
-                while(account == access || account > 3)
+                while(account == access || account > 3 || account < 1)
                 {
                     System.out.println("Invalid account, Please try again.");
                     System.out.print("Please enter the account you would like to transfer to: ");
@@ -190,17 +201,18 @@ public class BankAccounts {
                 System.out.printf("%.2f dollars has been transfered to account %d. The new balance on your account is %.2f dollars. \n\n", amount, account, array[access - 1].getBalance());
             }
 
-            else if(option == 6)
+            else if(option == 7)
             {
                 System.out.print("Please enter the amount of time you want to use (in months): ");
                 months = Integer.parseInt(input.nextLine());
                 System.out.print("Please enter the compound interval (amount of times compounded per year): ");
                 period = Integer.parseInt(input.nextLine());
                 interestTotal = array[access - 1].calculateInterest(months, period);
-                System.out.printf("The amount of interest you will make in %d months compounded %d times per year is %.2f dollars. \n\n", months, period, (interestTotal - array[access - 1].getBalance()));
+                System.out.printf("The amount of interest you have made in the time of %d months compounded %d times per year is %.2f dollars. This will now be deposited.\n\n", months, period, interestTotal);
+                array[access - 1].checkBalance();
             }
 
-            else if(option == 7)
+            else if(option == 8)
             {
                 done = false;
                 while(!done)
@@ -219,7 +231,7 @@ public class BankAccounts {
                 System.out.println();
             }
 
-            else if(option == 8)
+            else if(option == 9)
             {
                 System.out.println("Thank you for using the bank account program!\n");
                 break;
