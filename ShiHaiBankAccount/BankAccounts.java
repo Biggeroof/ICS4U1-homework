@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class BankAccounts { 
+public class BankAccounts {
 
     public static void main(String[] args) {
         //test
         //the interest is in percent, not decimal form
         Scanner input = new Scanner(System.in);
-        
+
         BankAccount accountOne = new BankAccount("Dave", 10506.14, "000001", 2.34);
         BankAccount accountTwo = new BankAccount("Sammy", 10120.57, "000002", 2.57);
         BankAccount accountThree = new BankAccount("Hai", 10120.57, "000003", 2.57);
@@ -21,12 +21,12 @@ public class BankAccounts {
         double amount;
         String name;
         boolean done = false;
-        String choice = false;
+        String choice;
         int account;
         int months;
         int period;
         double interestTotal;
-        
+
         System.out.println("Account number 1: ");
         System.out.println(accountOne);
 
@@ -52,7 +52,7 @@ public class BankAccounts {
                 done = true;
             }
         }
-        
+
         System.out.println("Now accessing account " + access + "\n");
 
         while(true)
@@ -72,25 +72,29 @@ public class BankAccounts {
             if(option == 1)
             {
                 System.out.println("The current name on account is " + array[access - 1].getName() + ". Are you sure you want to change this?");
-                choice = Integer.parseInt(input.nextLine());
+                choice = input.nextLine();
                 while(true)
                 {
-                    if(!choice == ((y || yes || Yes || Y) || (n || no || No || N))
+                    if((choice.equals("y") || choice.equals("yes") || choice.equals("Yes") || choice == "Y") || (choice.equals("n") || choice.equals("no") || choice.equals("No") || choice.equals("N")))
                     {
-                       break;
+                        break;
                     }
                     else
                     {
-                       System.out.println("Invalid choice. Please enter Again.");
-                       choice = Integer.parseInt(input.nextLine());
+                        System.out.println("Invalid choice. Please enter Again.");
+                        choice = input.nextLine();
                     }
-                
+
                 }
-                
-                if(choice == (y || yes || Yes || Y)
-                System.out.println("Please enter the new name you want on the account: ");
-                name = input.nextLine();
-                array[access - 1].setName(name);
+
+                if(choice.equals("y") || choice.equals("yes") || choice.equals("Yes") || choice == "Y")
+                {
+                    System.out.println("Please enter the new name you want on the account: ");
+                    name = input.nextLine();
+                    array[access - 1].setName(name);
+                    System.out.println("The name on account has been changed to " + name + ". \n");
+                }
+
                 // if(access == 1)
                 // {
                 //     accountOne.setName(name);
@@ -103,7 +107,7 @@ public class BankAccounts {
                 // {
                 //     accountThree.setName(name);
                 // }
-                System.out.println("The name on account has been changed to " + name + ". \n");
+
             }
 
             else if(option == 2)
@@ -170,7 +174,7 @@ public class BankAccounts {
             }
 
             else if(option == 5)
-            {   
+            {
                 System.out.print("Please enter the account you would like to transfer to: ");
                 account = Integer.parseInt(input.nextLine());
                 while(account == access || account > 3)
@@ -226,7 +230,7 @@ public class BankAccounts {
                 System.out.println("Invalid option, please enter again.");
             }
         }
-        
+
 
         //test without any user input
 //        DecimalFormat df = new DecimalFormat("0.00");
