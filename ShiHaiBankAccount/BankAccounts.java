@@ -91,7 +91,7 @@ public class BankAccounts {
                     }
                     else
                     {
-                        System.out.println("Invalid choice. Please enter Again.");
+                        System.out.println("Invalid choice. Please enter again.");
                         choice = input.nextLine();
                     }
 
