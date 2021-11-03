@@ -22,11 +22,6 @@ public class BankAccount
     {
         return balance;
     }
-    
-    public String getAccNum()
-    {
-        return accountNumber;
-    }
 
     public double getInterest()
     {
@@ -67,7 +62,12 @@ public class BankAccount
     public double calculateInterest(int months, int period)
     {
         //compound interest
-        return balance * Math.pow((1 + ((interest / 100) / period)), period * months / 12);
+        double gainedInterest = balance * Math.pow((1 + ((interest / 100) / period)), period * months / 12);
+        deposit(balance - gainedInterest);
+        return gainedInterest;
+
+        //add that interest to the account
+
     }
 
     public boolean equals(BankAccount other)
@@ -84,7 +84,4 @@ public class BankAccount
     {
         return String.format("Account holder name: %s \nAccount number: %s \nCurrent balance: %.2f \nCurrent interest rate: %.2f \n", name, accountNumber, balance, interest);
     }
-
-
-
 }
