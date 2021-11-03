@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class BankAccounts {
 
     public static void main(String[] args) {
-        //test
         //the interest is in percent, not decimal form
         Scanner input = new Scanner(System.in);
 
