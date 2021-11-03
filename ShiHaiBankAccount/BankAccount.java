@@ -22,6 +22,11 @@ public class BankAccount
     {
         return balance;
     }
+    
+    public String getAccNum()
+    {
+        return accountNumber;
+    }
 
     public double getInterest()
     {
