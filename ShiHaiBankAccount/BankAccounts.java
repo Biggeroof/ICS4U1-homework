@@ -21,6 +21,7 @@ public class BankAccounts {
         double amount;
         String name;
         boolean done = false;
+        String choice = false;
         int account;
         int months;
         int period;
@@ -70,6 +71,23 @@ public class BankAccounts {
 
             if(option == 1)
             {
+                System.out.println("The current name on account is " + array[access - 1].getName() + ". Are you sure you want to change this?");
+                choice = Integer.parseInt(input.nextLine());
+                while(true)
+                {
+                    if(!choice == ((y || yes || Yes || Y) || (n || no || No || N))
+                    {
+                       break;
+                    }
+                    else
+                    {
+                       System.out.println("Invalid choice. Please enter Again.");
+                       choice = Integer.parseInt(input.nextLine());
+                    }
+                
+                }
+                
+                if(choice == (y || yes || Yes || Y)
                 System.out.println("Please enter the new name you want on the account: ");
                 name = input.nextLine();
                 array[access - 1].setName(name);
