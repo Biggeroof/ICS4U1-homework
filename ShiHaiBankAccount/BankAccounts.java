@@ -29,6 +29,7 @@ public class BankAccounts {
         int period;
         double interestTotal;
 
+        System.out.println("Bank Account Program \n");
         //prints out all of the account details
         System.out.println("Account number 1: ");
         System.out.println(accountOne);
