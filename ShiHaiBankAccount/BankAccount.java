@@ -125,7 +125,7 @@ public class BankAccount
      * @param period How many times the interest is compounded yearly
      * @return The amount of interest gained in the time period
      */
-    public double calculateInterest(int months, int period)
+    public double calculateAddInterest(int months, int period)
     {
         //compound interest
         double balanceInterest = balance * Math.pow((1 + ((interest / 100) / period)), period * months / 12);
@@ -143,15 +143,31 @@ public class BankAccount
     public boolean equals(BankAccount other)
     {
         if((balance == other.balance) && (interest == other.interest))
-        {
+        {   
             return true;
         }
         return false;
     }
 
+    public static void transfer(double amount, BankAccount send, BankAccount recieve)
+    {
+        send.balance -= amount;
+        recieve.balance += amount;
+    }
+
+    /**
+     * Return string representation of object
+     * @return The account details
+     */
     @Override
     public String toString()
     {
-        return String.format("Account holder name: %s \nAccount number: %s \nCurrent balance: %.2f \nCurrent interest rate: %.2f \n", name, accountNumber, balance, interest);
+        String output = "";
+        output += "Account holder name: " + name;
+        output += "\nAccount number: " + accountNumber;
+        //these 2 variables need rounding as they are doubles, so String.format() is used
+        output += String.format("\nCurrent balance: %.2f", balance);
+        output += String.format("\nCurrent interest rate: %.2f \n", interest);
+        return output;
     }
 }

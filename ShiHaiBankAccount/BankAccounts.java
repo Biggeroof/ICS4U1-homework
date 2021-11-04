@@ -44,6 +44,14 @@ public class BankAccounts {
         System.out.println("Do account one and two have the same balance and interest rate?: " + accountOne.equals(accountTwo));
         System.out.println("Do account two and three have the same balance and interest rate?: " + accountTwo.equals(accountThree));
 
+        //calls the static transfer method
+        System.out.println("Transferring 10.57 from account 1 to account 3: ");
+        BankAccount.transfer(10.57, array[1 - 1], array[3 - 1]);
+        System.out.println(accountOne);
+        System.out.println("Transferring the money back: ");
+        BankAccount.transfer(10.57, array[3 - 1], array[1 - 1]);
+        System.out.println(accountOne);
+
         System.out.println("The current interest rate on account 1 is " + accountOne.getInterest() + ". This will be changed to 2.72%");
         accountOne.setInterest(2.72);
         System.out.println("The interest rate on account 1 is now " + accountOne.getInterest() + "\n");
@@ -164,6 +172,8 @@ public class BankAccounts {
                 amount = Double.parseDouble(input.nextLine());
                 //transfer the money to the other account
                 array[access - 1].transfer(amount, array[account - 1]);
+                //can use static transfer method if you comment top out
+                //BankAccount.transfer(amount, array[access - 1], array[account - 1]);
                 System.out.printf("%.2f dollars has been transfered to account %d. The new balance on your account is %.2f dollars. \n\n", amount, account, array[access - 1].getBalance());
             }
 
@@ -176,7 +186,7 @@ public class BankAccounts {
                 System.out.print("Please enter the compound interval (amount of times compounded per year): ");
                 period = Integer.parseInt(input.nextLine());
                 //calcuate the interest, print a statement returning the amount of interest made, and deposit that value into the account
-                interestTotal = array[access - 1].calculateInterest(months, period);
+                interestTotal = array[access - 1].calculateAddInterest(months, period);
                 System.out.printf("The amount of interest you have made in the time of %d months compounded %d times per year is %.2f dollars. This will now be deposited.\n\n", months, period, interestTotal);
                 array[access - 1].checkBalance();
             }
