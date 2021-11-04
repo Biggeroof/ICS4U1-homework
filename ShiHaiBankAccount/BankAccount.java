@@ -7,6 +7,7 @@ public class BankAccount
 
     /**
      * Initializes a BankAccount object instance and fills in all the class fields with the input
+     *
      * @param name Name of the holder of account
      * @param balance Initial balance of account
      * @param accountNumber The account number
@@ -22,6 +23,7 @@ public class BankAccount
 
     /**
      * Returns the name of the holder of account
+     *
      * @return The name
      */
     public String getName()
@@ -31,6 +33,7 @@ public class BankAccount
 
     /**
      * Returns the current balance of the account
+     *
      * @return The balance
      */
     public double getBalance()
@@ -40,6 +43,7 @@ public class BankAccount
 
     /**
      * Returns the current interest rate on the acocunt
+     *
      * @return The interest rate
      */
     public double getInterest()
@@ -49,6 +53,7 @@ public class BankAccount
 
     /**
      * Changes the name on the account to user inputted value
+     *
      * @param name The name inputted by the user
      * @return none
      */
@@ -59,6 +64,7 @@ public class BankAccount
 
     /**
      * Changes the interest rate on the account to user inputted value
+     *
      * @param interest The rate inputted by the user
      * @return none
      */
@@ -69,6 +75,7 @@ public class BankAccount
 
     /**
      * Prints a message about the account's current balance
+     *
      * @return none
      */
     public void checkBalance()
@@ -78,6 +85,7 @@ public class BankAccount
     
     /**
      * Withdraws a certain amount of money from the account
+     *
      * @param amount The amount to be withdrawn
      * @return none
      */
@@ -88,6 +96,7 @@ public class BankAccount
 
     /**
      * Deposits a certain amount of money from the account
+     *
      * @param amount The amount to be deposited
      * @return none
      */
@@ -98,6 +107,7 @@ public class BankAccount
 
     /**
      * Transfers a certain amount of money from 1 account to another
+     *
      * @param amount The amount to be transferred
      * @param other The account the money will be transferred to
      * @return none
@@ -110,6 +120,7 @@ public class BankAccount
 
     /**
      * Calculates and adds the interest for a x amount of years compounded x times a year
+     *
      * @param months The amount of months
      * @param period How many times the interest is compounded yearly
      * @return The amount of interest gained in the time period
@@ -125,6 +136,7 @@ public class BankAccount
 
     /**
      * Compares the balance and interest of 2 accounts and returns if they are equal or not
+     *
      * @param other The account to be compared to
      * @return If the accounts are equal or not
      */
