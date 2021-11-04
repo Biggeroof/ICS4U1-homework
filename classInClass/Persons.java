@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Persons {
 
     public static void main(String[] args) {
@@ -15,6 +17,8 @@ public class Persons {
         System.out.println(ppl);
         ppl.happyBirthday("Alan");
         ppl.addPerson("Ollie", 4);
+        System.out.println(ppl.getPerson(0).getName());
+        
 
     }
 }

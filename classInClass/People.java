@@ -19,6 +19,11 @@ public class People
         people.add(p);
     }
 
+    public Person getPerson(int index)
+    {
+        return people.get(index);
+    }
+
     public void happyBirthday(String name)
     {
         //for each person p in the array people
