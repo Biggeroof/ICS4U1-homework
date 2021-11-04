@@ -214,10 +214,10 @@ public class BankAccounts {
         }
 
 
-        //test without any user input
+    //test without any user input
     //    DecimalFormat df = new DecimalFormat("0.00");
-    //     BankAccount test = new BankAccount("Dave", 10506.14, "000001", 2.34);
-    //     BankAccount test2 = new BankAccount("Sammy", 10120.57, "000002", 2.57);
+    //    BankAccount test = new BankAccount("Dave", 10506.14, "000001", 2.34);
+    //    BankAccount test2 = new BankAccount("Sammy", 10120.57, "000002", 2.57);
 
     //    System.out.println(test);
     //    System.out.println(test2);
@@ -241,6 +241,6 @@ public class BankAccounts {
     //    test.transfer(10.07, test2);
     //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
     //    System.out.println("Current balance on account 2: " + df.format(test2.getBalance()));
-    //    System.out.println("Balance after 12 months of interest: " + df.format(test.calculateInterest(12, 1)));
+    //    System.out.println("Total money gained from interest on account 1 in 1 year compounded once a year: " + df.format(test.calculateInterest(12, 1)));
     }
 }
