@@ -149,6 +149,14 @@ public class BankAccount
         return false;
     }
 
+    /**
+     * Transfers a certain amount of money from one account to another
+     * 
+     * @param amount The amount to be sent
+     * @param send The account sending the money
+     * @param recieve The account recieving the money
+     * @return none
+     */
     public static void transfer(double amount, BankAccount send, BankAccount recieve)
     {
         send.balance -= amount;
@@ -157,6 +165,7 @@ public class BankAccount
 
     /**
      * Return string representation of object
+     * 
      * @return The account details
      */
     @Override
