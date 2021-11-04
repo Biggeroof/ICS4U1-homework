@@ -99,7 +99,7 @@ public class BankAccounts {
             }
 
             else if(option == 2)
-            {  
+            {
                 //confirm that the user wants to change the name 
                 System.out.println("The current name on account is " + array[access - 1].getName() + ". Are you sure you want to change this?");
                 choice = input.nextLine();
@@ -187,7 +187,7 @@ public class BankAccounts {
                 period = Integer.parseInt(input.nextLine());
                 //calcuate the interest, print a statement returning the amount of interest made, and deposit that value into the account
                 interestTotal = array[access - 1].calculateAddInterest(months, period);
-                System.out.printf("The amount of interest you have made in the time of %d months compounded %d times per year is %.2f dollars. This will now be deposited.\n\n", months, period, interestTotal);
+                System.out.printf("The interest you have made in %d months compounded %d times per year is %.2f dollars. This will be deposited.\n\n", months, period, interestTotal);
                 array[access - 1].checkBalance();
             }
 
@@ -225,33 +225,33 @@ public class BankAccounts {
         }
 
 
-    //test without any user input
-    //    DecimalFormat df = new DecimalFormat("0.00");
-    //    BankAccount test = new BankAccount("Dave", 10506.14, "000001", 2.34);
-    //    BankAccount test2 = new BankAccount("Sammy", 10120.57, "000002", 2.57);
+        //test without any user input
+        //    DecimalFormat df = new DecimalFormat("0.00");
+        //    BankAccount test = new BankAccount("Dave", 10506.14, "000001", 2.34);
+        //    BankAccount test2 = new BankAccount("Sammy", 10120.57, "000002", 2.57);
 
-    //    System.out.println(test);
-    //    System.out.println(test2);
-    //    System.out.println("Are the account balances and interest rate equal?; " + test.equals(test2));
-    //    System.out.println("Current name on account 1: " + test.getName());
-    //    System.out.println("Current balance on account 1: " + test.getBalance());
-    //    System.out.println("Current interest on account 1: " + test.getInterest());
-    //    System.out.println("Setting name on account 1 to Lucas");
-    //    test.setName("Lucas");
-    //    System.out.println("Current name on account 1: " + test.getName());
-    //    System.out.println("Setting interest on account 1 to 5%");
-    //    test.setInterest(5);
-    //    test.checkBalance();
-    //    System.out.println("Withdrawing 10.07 from account 1");
-    //    test.withdraw(10.07);
-    //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
-    //    System.out.println("Depositing 10.07 into account 1");
-    //    test.deposit(10.07);
-    //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
-    //    System.out.println("Transferring 10.07 from account 1 to account 2");
-    //    test.transfer(10.07, test2);
-    //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
-    //    System.out.println("Current balance on account 2: " + df.format(test2.getBalance()));
-    //    System.out.println("Total money gained from interest on account 1 in 1 year compounded once a year: " + df.format(test.calculateInterest(12, 1)));
+        //    System.out.println(test);
+        //    System.out.println(test2);
+        //    System.out.println("Are the account balances and interest rate equal?; " + test.equals(test2));
+        //    System.out.println("Current name on account 1: " + test.getName());
+        //    System.out.println("Current balance on account 1: " + test.getBalance());
+        //    System.out.println("Current interest on account 1: " + test.getInterest());
+        //    System.out.println("Setting name on account 1 to Lucas");
+        //    test.setName("Lucas");
+        //    System.out.println("Current name on account 1: " + test.getName());
+        //    System.out.println("Setting interest on account 1 to 5%");
+        //    test.setInterest(5);
+        //    test.checkBalance();
+        //    System.out.println("Withdrawing 10.07 from account 1");
+        //    test.withdraw(10.07);
+        //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
+        //    System.out.println("Depositing 10.07 into account 1");
+        //    test.deposit(10.07);
+        //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
+        //    System.out.println("Transferring 10.07 from account 1 to account 2");
+        //    test.transfer(10.07, test2);
+        //    System.out.println("Current balance on account 1: " + df.format(test.getBalance()));
+        //    System.out.println("Current balance on account 2: " + df.format(test2.getBalance()));
+        //    System.out.println("Total money gained from interest on account 1 in 1 year compounded once a year: " + df.format(test.calculateInterest(12, 1)));
     }
 }

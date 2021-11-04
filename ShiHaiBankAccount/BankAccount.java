@@ -82,7 +82,7 @@ public class BankAccount
     {
         System.out.printf("Your balance is: %.2f \n\n", balance);
     }
-    
+
     /**
      * Withdraws a certain amount of money from the account
      *
@@ -143,7 +143,7 @@ public class BankAccount
     public boolean equals(BankAccount other)
     {
         if((balance == other.balance) && (interest == other.interest))
-        {   
+        {
             return true;
         }
         return false;
@@ -151,7 +151,7 @@ public class BankAccount
 
     /**
      * Transfers a certain amount of money from one account to another
-     * 
+     *
      * @param amount The amount to be sent
      * @param send The account sending the money
      * @param recieve The account recieving the money
@@ -165,7 +165,7 @@ public class BankAccount
 
     /**
      * Return string representation of object
-     * 
+     *
      * @return The account details
      */
     @Override
