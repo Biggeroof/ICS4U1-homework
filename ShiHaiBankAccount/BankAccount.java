@@ -6,7 +6,7 @@ public class BankAccount
     private double interest;
 
     /**
-     * Initializes a BankAccount object instance and fills in all the class fields with the input
+     * Initializes a BankAccount object instance and fills in all the fields with the parameters
      *
      * @param name Name of the holder of account
      * @param balance Initial balance of account
@@ -52,9 +52,9 @@ public class BankAccount
     }
 
     /**
-     * Changes the name on the account to user inputted value
+     * Changes the name on the account to given value in parameters
      *
-     * @param name The name inputted by the user
+     * @param name The new value of the name
      * @return none
      */
     public void setName(String name)
@@ -63,9 +63,9 @@ public class BankAccount
     }
 
     /**
-     * Changes the interest rate on the account to user inputted value
+     * Changes the interest rate on the account to given value
      *
-     * @param interest The rate inputted by the user
+     * @param interest The interest rate's new value
      * @return none
      */
     public void setInterest(double interest)
