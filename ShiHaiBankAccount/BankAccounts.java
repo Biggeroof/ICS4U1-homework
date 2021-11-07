@@ -81,7 +81,7 @@ public class BankAccounts {
             System.out.println("Please enter what you would like to do: ");
             System.out.println("1. Check current account details");
             System.out.println("2. Change name on account");
-            System.out.println("2. Check current balance");
+            System.out.println("3. Check current balance");
             System.out.println("4. Withdraw money");
             System.out.println("5. Deposit money");
             System.out.println("6. Transfer money to another account");

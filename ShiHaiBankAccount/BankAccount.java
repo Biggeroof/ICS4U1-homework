@@ -1,3 +1,11 @@
+/**
+ * A class that defines a bank account and has parameters name, balance, accountNumber, and interest.
+ * This class includes some basic operations that a bank account should have much as a balancer checker, 
+ * withdrawing and depositing from the account, and transferring between accounts. 
+ * It also has some other methods, such as interest and an equals method that determines if the balance and interest rate of
+ * 2 accounts are equal.
+ */
+
 public class BankAccount
 {
     private String name;
@@ -52,7 +60,7 @@ public class BankAccount
     }
 
     /**
-     * Changes the name on the account to given value in parameters
+     * Changes the name on the account to parameter given, name
      *
      * @param name The new value of the name
      * @return none
@@ -63,7 +71,7 @@ public class BankAccount
     }
 
     /**
-     * Changes the interest rate on the account to given value
+     * Changes the interest rate on the account to parameter given, interest
      *
      * @param interest The interest rate's new value
      * @return none
