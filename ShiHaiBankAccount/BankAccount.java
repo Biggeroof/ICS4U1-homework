@@ -30,7 +30,7 @@ public class BankAccount
     }
 
     /**
-     * Returns the name of the holder of account
+     * Returns the name of the holder of the account
      *
      * @return The name
      */
@@ -52,7 +52,7 @@ public class BankAccount
     /**
      * Returns the account number
      *
-     * @return The interest rate
+     * @return The account number
      */
     public String getAccNumber()
     {
