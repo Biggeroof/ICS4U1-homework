@@ -1,8 +1,8 @@
 /**
  * A class that defines a bank account and has parameters name, balance, accountNumber, and interest.
- * This class includes some basic operations that a bank account should have much as a balancer checker, 
- * withdrawing and depositing from the account, and transferring between accounts. 
- * It also has some other methods, such as interest and an equals method that determines if the balance and interest rate of
+ * This class includes some basic operations that a bank account should have such as a balance checker,
+ * withdrawing and depositing from the account, and transferring between accounts.
+ * It also has other operations, such as interest and an equals method that determines if the balance and interest rate of
  * 2 accounts are equal.
  */
 
@@ -50,7 +50,17 @@ public class BankAccount
     }
 
     /**
-     * Returns the current interest rate on the acocunt
+     * Returns the account number
+     *
+     * @return The interest rate
+     */
+    public String getAccNumber()
+    {
+        return accountNumber;
+    }
+
+    /**
+     * Returns the current interest rate on the account
      *
      * @return The interest rate
      */
@@ -62,7 +72,7 @@ public class BankAccount
     /**
      * Changes the name on the account to parameter given, name
      *
-     * @param name The new value of the name
+     * @param name The new name
      * @return none
      */
     public void setName(String name)
@@ -73,7 +83,7 @@ public class BankAccount
     /**
      * Changes the interest rate on the account to parameter given, interest
      *
-     * @param interest The interest rate's new value
+     * @param interest The new interest rate
      * @return none
      */
     public void setInterest(double interest)
@@ -162,7 +172,7 @@ public class BankAccount
      *
      * @param amount The amount to be sent
      * @param send The account sending the money
-     * @param recieve The account recieving the money
+     * @param recieve The account receiving the money
      * @return none
      */
     public static void transfer(double amount, BankAccount send, BankAccount recieve)
