@@ -98,7 +98,7 @@ public class BankAccount
      */
     public void checkBalance()
     {
-        System.out.printf("Your balance is: %.2f \n\n", balance);
+        System.out.printf("Your balance is: $%.2f \n\n", balance);
     }
 
     /**
@@ -193,8 +193,8 @@ public class BankAccount
         output += "Account holder name: " + name;
         output += "\nAccount number: " + accountNumber;
         //these 2 variables need rounding as they are doubles, so String.format() is used
-        output += String.format("\nCurrent balance: %.2f", balance);
-        output += String.format("\nCurrent interest rate: %.2f \n", interest);
+        output += String.format("\nCurrent balance: $%.2f", balance);
+        output += String.format("\nCurrent interest rate: %.2f%% \n", interest);
         return output;
     }
 }

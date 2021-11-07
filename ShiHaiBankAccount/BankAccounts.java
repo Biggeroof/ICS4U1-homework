@@ -52,9 +52,9 @@ public class BankAccounts {
         BankAccount.transfer(10.57, array[3 - 1], array[1 - 1]);
         System.out.println(accountOne);
 
-        System.out.println("The current interest rate on account 1 is " + accountOne.getInterest() + ". This will be changed to 2.72%");
+        System.out.println("The current interest rate on account 1 is " + accountOne.getInterest() + "%. This will be changed to 2.72%");
         accountOne.setInterest(2.72);
-        System.out.println("The interest rate on account 1 is now " + accountOne.getInterest() + "\n");
+        System.out.println("The interest rate on account 1 is now " + accountOne.getInterest() + "%\n");
 
         //while loop to keep repeating the account access question until its entered correctly
         while(!done)
@@ -142,7 +142,7 @@ public class BankAccounts {
                 amount = Double.parseDouble(input.nextLine());
                 //withdraw the money from the account
                 array[access - 1].withdraw(amount);
-                System.out.printf("%.2f dollars has been withdrawn. The new balance is %.2f dollars. \n\n", amount, array[access - 1].getBalance());
+                System.out.printf("$%.2f has been withdrawn. The new balance is $%.2f. \n\n", amount, array[access - 1].getBalance());
             }
 
             else if(option == 5)
@@ -152,7 +152,7 @@ public class BankAccounts {
                 amount = Double.parseDouble(input.nextLine());
                 //deposit the money into the account
                 array[access - 1].deposit(amount);
-                System.out.printf("%.2f dollars has been deposited. The new balance is %.2f dollars. \n\n", amount, array[access - 1].getBalance());
+                System.out.printf("$%.2f has been deposited. The new balance is $%.2f. \n\n", amount, array[access - 1].getBalance());
             }
 
             else if(option == 6)
@@ -174,7 +174,7 @@ public class BankAccounts {
                 array[access - 1].transfer(amount, array[account - 1]);
                 //can use static transfer method if you comment top out
                 //BankAccount.transfer(amount, array[access - 1], array[account - 1]);
-                System.out.printf("%.2f dollars has been transfered to account %d. The new balance on your account is %.2f dollars. \n\n", amount, account, array[access - 1].getBalance());
+                System.out.printf("$%.2f has been transfered to account %d. The new balance on your account is $%.2f. \n\n", amount, account, array[access - 1].getBalance());
             }
 
             else if(option == 7)
@@ -187,7 +187,7 @@ public class BankAccounts {
                 period = Integer.parseInt(input.nextLine());
                 //calcuate the interest, print a statement returning the amount of interest made, and deposit that value into the account
                 interestTotal = array[access - 1].calculateAddInterest(months, period);
-                System.out.printf("The interest you have made in %d months compounded %d times per year is %.2f dollars. This will be deposited.\n\n", months, period, interestTotal);
+                System.out.printf("The interest you have made in %d months compounded %d times per year is $%.2f. This will be deposited.\n\n", months, period, interestTotal);
                 array[access - 1].checkBalance();
             }
 
