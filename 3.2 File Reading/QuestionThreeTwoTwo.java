@@ -1,12 +1,13 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class QuestionThreeTwoTwo {
 
     public static void main(String[] args) {
-	File file = new File("src/names.txt");
+	File file = new File("ICS homework/3.2 File Reading/names.txt");
 
     try
     {
