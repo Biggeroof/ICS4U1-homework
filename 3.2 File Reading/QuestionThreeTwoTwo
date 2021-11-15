@@ -19,6 +19,8 @@ public class QuestionThreeTwoTwo {
         {
             arr.add(input.next());
         }
+	
+	Collections.sort(arr);
 
         for(int i = 0; i < arr.size(); i++)
         {
