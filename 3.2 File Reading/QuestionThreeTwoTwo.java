@@ -14,6 +14,7 @@ public class QuestionThreeTwoTwo {
         Scanner input = new Scanner(file);
         input.useDelimiter(",");
         long total = 0;
+        int wordTotal = 0;
         ArrayList<String> arr = new ArrayList<>();
 
         while(input.hasNext())
@@ -22,10 +23,18 @@ public class QuestionThreeTwoTwo {
         }
 	
 	Collections.sort(arr);
+    arr.toString();
 
         for(int i = 0; i < arr.size(); i++)
         {
-            total += (((int) arr.get(i).charAt(1)) - 64) * (i + 1);
+            System.out.println(arr.get(i));
+            for(int j = 1; j < arr.get(i).length() - 1; j++)
+            {
+                
+                wordTotal += (((int)(arr.get(i).charAt(j))) - 64);
+            }
+            total += (wordTotal * (i + 1));
+            wordTotal = 0;
         }
         System.out.println(total);
     }
