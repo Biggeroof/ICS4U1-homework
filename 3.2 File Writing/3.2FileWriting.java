@@ -1,4 +1,5 @@
 import java.io.*;
+import java.text.DecimalFormat;
 
 //Q1, Q2
 /*public class Main {
@@ -74,17 +75,22 @@ public class Main {
             int countV = 0;
             int count = 0;
             String vowels = "AEIOU";
+            DecimalFormat df = new DecimalFormat("#.##");
 
             while((line = reader.read()) != -1)
             {
-                count++;
+                if(line != 32)
+                {
+                    count++;
+                }
+
                 if(vowels.contains(Character.toString((char)line)))
                 {
                     countV++;
                 }
             }
             write.write("total number of chars in string: " + count + "\nnumber of vowels: " + countV +
-                    "\nPercentage of vowels: " + ((double)countV/count) * 100 + "%");
+                    "\nPercentage of vowels: " + df.format((double)countV/count * 100) + "%");
             write.close();
         }
         catch (IOException e)
