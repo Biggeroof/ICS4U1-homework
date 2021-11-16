@@ -1,0 +1,3 @@
+total number of chars in string: 857
+number of vowels: 259
+Percentage of vowels: 30.221703617269547%
