@@ -23,6 +23,7 @@ import java.text.DecimalFormat;
                 write.write(line);
             }
             write.close();
+            reader.close();
         }
         catch (IOException e)
         {
@@ -48,12 +49,13 @@ import java.text.DecimalFormat;
 
             while((line = reader.read()) != -1)
             {
-                if((line >= 65 && line <= 90) || line == 32)
+                if((line >= 65 && line <= 90) || line == 32 || (line >= 97 && line <= 122))
                 {
                     write.write(line);
                 }
             }
             write.close();
+            reader.close();
         }
         catch (IOException e)
         {
@@ -74,7 +76,8 @@ public class Main {
             int line = 0;
             int countV = 0;
             int count = 0;
-            String vowels = "AEIOU";
+            String vowels = "AEIOUaeiou";
+            String specialChars = "~`!@#$%^&*()-_=+[{]}|;:',<.>/?";
             DecimalFormat df = new DecimalFormat("#.##");
 
             while((line = reader.read()) != -1)
@@ -92,6 +95,7 @@ public class Main {
             write.write("total number of chars in string: " + count + "\nnumber of vowels: " + countV +
                     "\nPercentage of vowels: " + df.format((double)countV/count * 100) + "%");
             write.close();
+            reader.close();
         }
         catch (IOException e)
         {
