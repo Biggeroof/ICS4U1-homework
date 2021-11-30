@@ -4,24 +4,22 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        int[] values = {3, -3, 7, 12, 9, 10, 14};
+        int[] values = {0, 3, 10, 20, 25, 30, 50};
         Random random = new Random();
-        int N = 10;
+        int N = 1000;
         int[] big = new int[N];
         for (int i = 0; i < N; i++) {
             big[i] = random.nextInt(N);
         }
-        //System.out.println(Arrays.toString(big));
-//        System.out.println(linearSearch(values, 14));
-//        System.out.println(smallest(values));
-//        System.out.println(indexOfTheSmallest(values));
-//        System.out.println(indexOfTheSmallestStartingFrom(values, 3));
-//        swap(values, 1,4);
+
         //selectionSort(big);
-        //System.out.println(Arrays.toString(big));
-        //sort(big, 0, big.length - 1);
-        insertionSort(big);
+        //merge sort vvv
+        sort(big, 0, big.length - 1);
+        //bubbleSort(big);
+        //insertionSort(big);
         System.out.println(Arrays.toString(big));
+        System.out.println(linearSearchV2(values, 27));
+        System.out.println(binarySearch(values, 25));
     }
 
     public static boolean linearSearch(int[] array, int searched) {
@@ -90,7 +88,6 @@ public class Main {
     }
 
     public static void selectionSort(int[] array) {
-        // Selection sort:
         for (int i = 0; i < array.length; i++) {
             swap(array, i, indexOfTheSmallestStartingFrom(array, i));
         }
@@ -100,7 +97,7 @@ public class Main {
     {
         int l = 0;
         int r = arr.length;
-        while (l < r)
+        while (l <= r)
         {
             int mid = ((l + r) / 2);
 
@@ -132,7 +129,7 @@ public class Main {
             {
                 if(arr[j] > arr[j + 1])
                 {
-                    swap(arr, arr[j], arr[j + 1]);
+                    swap(arr, j, j + 1);
                     swap = true;
                 }
             }
