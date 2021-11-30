@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class everything {
+public class Main {
 
     public static void main(String[] args) {
         int[] values = {3, -3, 7, 12, 9, 10, 14};
@@ -19,7 +19,8 @@ public class everything {
 //        swap(values, 1,4);
         //selectionSort(big);
         //System.out.println(Arrays.toString(big));
-        sort(big, 0, big.length - 1);
+        //sort(big, 0, big.length - 1);
+        insertionSort(big);
         System.out.println(Arrays.toString(big));
     }
 
@@ -142,13 +143,21 @@ public class everything {
         }
     }
 
-    //public static int[] insertionSort(int[] arr)
-    //{
-      //for(int i = 0; i < arr.length; i++)
-      //  {
-        //    for(int j = 0; j )
-        //}
-    //}
+    public static void insertionSort(int[] arr)
+    {
+      for(int i = 1; i < arr.length; i++)
+        {
+            int key = arr[i];
+            int j = i - 1;
+
+            while(j >= 0 && key < arr[j])
+            {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
 
     public static void sort(int[] arr, int l, int r)
     {
