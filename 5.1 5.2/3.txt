@@ -1,0 +1,8 @@
+a) will compile and execute properly
+b) will compile and execute properly
+c) will work with cast to Car class
+d) will not compile and cannot be fixed by cast (truck doesent have numseats and you cant cast a child class to another one)
+e) will not compile and cannot be fixed by cast (car doesent have a loadCapacity and you cant cast a child class to a another one)
+f) will compile but doesent work (can't cast it to car because its not a car anywhere)
+g) will compile and execute properly
+h) will not compile and can't be fixed by cast (cant cast truck to car)
