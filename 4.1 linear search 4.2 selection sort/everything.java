@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class Main {
+public class everything {
 
     public static void main(String[] args) {
         int[] values = {0, 3, 10, 20, 25, 30, 50};

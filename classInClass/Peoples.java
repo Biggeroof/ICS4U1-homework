@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Persons {
+public class Peoples {
 
     public static void main(String[] args) {
 	    Person p = new Person("Alan", 42);
