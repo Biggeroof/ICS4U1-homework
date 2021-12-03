@@ -49,7 +49,7 @@ public class PartTimeEmployee extends Employee
     {
         System.out.println("\n--------------- PAY STUB ---------------");
         System.out.println(this);
-        System.out.println("Hourly Wage: $" + hourlyWage);
+        System.out.printf("Hourly Wage: $%.2f\n", hourlyWage);
         System.out.println("Number of hours assigned: " + numHoursAssigned);
         System.out.println("Sick days taken: " + sickDaysTaken);
         System.out.printf("Current Month pay: $%.2f\n", pay());
