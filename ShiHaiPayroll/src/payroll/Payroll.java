@@ -5,7 +5,12 @@ import java.util.ArrayList;
 
 public class Payroll
 {
-    private ArrayList<Employee> staffList = new ArrayList<>();
+    private ArrayList<Employee> staffList;
+
+    public Payroll()
+    {
+        staffList = new ArrayList<>();
+    }
 
     public boolean loadStaffList(String filename)
     {
