@@ -30,7 +30,7 @@ public class Payroll
         }
         catch (IOException e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("Problem reading file.");
             return false;
         }
     }
