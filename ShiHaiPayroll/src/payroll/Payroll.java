@@ -47,13 +47,13 @@ public class Payroll
                 if((staffList.get(i)) instanceof FullTimeEmployee)
                 {
                     //2 write statements here as just having 1 was too long
-                    writer.write(String.format(temp.employeeNumber + "," + temp.lastName + "," + temp.firstName + "," + temp.jobTitle));
-                    writer.write(String.format(",full-time," + ((FullTimeEmployee)temp).getYearlySalary() + "," + temp.getSickDays() + "\n"));
+                    writer.write(temp.employeeNumber + "," + temp.lastName + "," + temp.firstName + "," + temp.jobTitle);
+                    writer.write(",full-time," + ((FullTimeEmployee)temp).getYearlySalary() + "," + temp.getSickDays() + "\n");
                 }
                 else
                 {
-                    writer.write(String.format(temp.employeeNumber + "," + temp.lastName + "," + temp.firstName + "," + temp.jobTitle));
-                    writer.write(String.format(",part-time," + ((PartTimeEmployee)temp).getNumHoursAssigned() + "," + ((PartTimeEmployee)temp).getHourlyWage() + "," + temp.getSickDays() + "\n"));
+                    writer.write(temp.employeeNumber + "," + temp.lastName + "," + temp.firstName + "," + temp.jobTitle);
+                    writer.write(",part-time," + ((PartTimeEmployee)temp).getNumHoursAssigned() + "," + ((PartTimeEmployee)temp).getHourlyWage() + "," + temp.getSickDays() + "\n");
                 }
             }
             writer.close();
