@@ -42,10 +42,10 @@ public class FullTimeEmployee extends Employee
     {
         System.out.println("\n--------------- PAY STUB ---------------");
         System.out.println(this);
-        System.out.println("Yearly Salary: $" + yearlySalary);
+        System.out.printf("Yearly Salary: $%.2f\n", yearlySalary);
         System.out.printf("Current Month pay: $%.2f\n", pay());
         System.out.println("Sick days left: " + sickDaysLeft);
-        System.out.println("---------------------------------------\n");
+        System.out.println("----------------------------------------\n");
     }
 
     @Override
