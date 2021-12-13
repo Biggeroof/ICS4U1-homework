@@ -10,9 +10,11 @@ class recursion
             //System.out.println(square(0));
             //System.out.println(prime(37, 2));
             System.out.println(reverse(s));
-            printTriangle(3, 1);
-            System.out.println(numDigits(128));
-            hailstone(9);
+            //5 rows, blank string to concat to, row to start at
+            String a = printTriangle(5, "", 1);
+            System.out.println(a);
+            //System.out.println(numDigits(128));
+            //hailstone(9);
         }
     
         public static double power(double x, int n)
@@ -120,7 +122,7 @@ class recursion
             return reverse(s.substring(1)) + s.charAt(0);
         }
 
-        static void printn(int num)
+        public static void printn(int num)
         {
             if (num == 0)
             {
@@ -131,7 +133,7 @@ class recursion
             printn(num - 1);
         }
          
-        static void printTriangle(int n, int i)
+        /*public static void printTriangle(int n, int i)
         {
             if (n == 0)
             {
@@ -141,9 +143,27 @@ class recursion
             printn(i);
             System.out.println();
          
-            // recursively calling pattern()
             printTriangle(n - 1, i + 1);
-        }
+        }*/
+
+        public static String printTriangle(int n, String s, int i)
+        {
+            s = "";
+            System.out.println(n);
+            if (n == 0)
+            {
+                return "";
+            }
+
+            for(int j = i; j > 0; j--)
+            {
+                s += "*";
+            }
+            s += "\n";
+            //System.out.println("\n" + s + "\n");
+            
+            return s + printTriangle(n - 1, s, i + 1);
+        }   
 
         public static int numDigits(int n) 
         {
