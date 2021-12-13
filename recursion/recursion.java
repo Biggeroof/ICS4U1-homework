@@ -116,7 +116,7 @@ class recursion
                 return s;
             }
             //generates the string out backwards
-            //makes the last letter of the new string first and passes in the new substring into reverse without the first element
+            //makes the last letter of the new string first and passes in the new substring into reverse without the first letter
             return reverse(s.substring(1)) + s.charAt(0);
         }
 
