@@ -16,11 +16,7 @@ public class Student extends Persons{
     @Override
     public boolean equals(Object o)
     {
-        if(super.equals(o))
-        {
             Student s = (Student)o;
-                return s.id == this.id;
-        }
-        return false;
+            return (s.id == this.id) && super.equals(o);
     }
 }
