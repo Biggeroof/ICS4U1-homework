@@ -8,10 +8,10 @@ class recursion
             //System.out.println(fib(5));
             //System.out.println(gcd(10, 125));
             //System.out.println(square(0));
-            //System.out.println(prime(37, 2));
+            System.out.println(prime(227, 2));
             System.out.println(reverse(s));
             //5 rows, blank string to concat to, row to start at
-            String a = printTriangle(5, "", 1);
+            String a = printTriangle(5, 1);
             System.out.println(a);
             //System.out.println(numDigits(128));
             //hailstone(9);
@@ -146,9 +146,9 @@ class recursion
             printTriangle(n - 1, i + 1);
         }*/
 
-        public static String printTriangle(int n, String s, int i)
+        public static String printTriangle(int n, int i)
         {
-            s = "";
+            String s = "";
             System.out.println(n);
             if (n == 0)
             {
@@ -162,7 +162,7 @@ class recursion
             s += "\n";
             //System.out.println("\n" + s + "\n");
             
-            return s + printTriangle(n - 1, s, i + 1);
+            return s + printTriangle(n - 1, i + 1);
         }   
 
         public static int numDigits(int n) 
