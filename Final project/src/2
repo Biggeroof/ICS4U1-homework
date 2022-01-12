@@ -1,0 +1,9 @@
+Apartment,500000.0,0,2,1,153,Bathurst,Toronto,M54 2C6,1500.0,700.0,00004,32,100.0
+House,750005.23,2,7,3,227,Bathurst,Toronto,M54 2C6,3000.0,1000.0,00001,terraced,2,356.0
+House,1000000.0,2,7,4,300,Palmerston,Toronto,M53 4M8,4000.0,1500.0,00002,detached,2,450.0
+House,1500000.0,2,10,4,400,Spadina,Toronto,M4A 5B2,4500.0,2500.0,00003,semi-detached,2,500.0
+Townhouse,1250000.0,1,4,2,430,Spadina,Toronto,M4A 5B2,4200.0,1700.0,00005,40,200.0,2
+House,2.0,2,2,2,2,2,2,2,2.0,2.0,2,terraced,3,12.0
+Apartment,2.0,2,2,22,2,2,2,M2,2.0,2.0,as,2,2.0
+Townhouse,2.0,2,2,2,2,2,2,2,2.0,2.0,2,2,2.0,2
+Apartment,2.0,2,2,2,2,2,2,2,2.0,2.0,2,2,2.0
