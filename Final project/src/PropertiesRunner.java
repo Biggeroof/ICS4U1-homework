@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main
+public class PropertiesRunner
 {
     //WRITE JAVADOCS
     //TEST THE CATCHES BY TYPING STUFF IN WRONG
@@ -8,6 +8,12 @@ public class Main
     static final String FILE_PATH = "src/";
     static Scanner input = new Scanner(System.in);
     static Properties propertyDatabase = null;
+    static String menu = "PROPERTY MANAGER\n----------------------------\nChoose an option from the menu:\n  " +
+            "1. Load property list from file\n  2. Save property list to file\n  3. Add a property\n" +
+            "  4. Remove a property\n  5. Edit information for one property\n  6. List all properties\n" +
+            "  7. List one property\n  8. Filter properties by attribute\n  9. Sort properties by attribute\n" +
+            "  10. Calculate average price of all of the homes\n  11. Calculate average floor area of all of the homes\n  " +
+            "12. Calculate expected cost to own home for a year (excluding mortgage)\n  To choose an option, type in the number next to the option.";
 
     public static void main(String[] args)
     {
@@ -20,12 +26,17 @@ public class Main
 
         while (on)
         {
-            printMenu();
 
             if (propertyDatabase != null)
             {
-                System.out.print("> ");
-                option = input.nextLine();
+                do
+                {
+                    option = Properties.takeInt(input, menu);
+                    if(Integer.parseInt(option) < 0 || Integer.parseInt(option) > 12)
+                    {
+                        System.out.println("\nInvalid option. Please try again.\n");
+                    }
+                } while (Integer.parseInt(option) < 0 || Integer.parseInt(option) > 12);
             }
             else
             {
@@ -273,26 +284,5 @@ public class Main
             input.nextLine();
             System.out.println();
         }
-    }
-
-    public static void printMenu()
-    {
-        System.out.println("PROPERTY MANAGER");
-        System.out.println("----------------------------");
-        System.out.println("Choose an option from the menu:");
-        System.out.println("  1. Load property list from file");
-        System.out.println("  2. Save property list to file");
-        System.out.println("  3. Add a property");
-        System.out.println("  4. Remove a property");
-        System.out.println("  5. Edit information for one property");
-        System.out.println("  6. List all properties");
-        System.out.println("  7. List one property");
-        System.out.println("  8. Filter properties by attribute");
-        System.out.println("  9. Sort properties by attribute");
-        System.out.println("  10. Calculate average price of all of the homes");
-        System.out.println("  11. Calculate average floor area of all of the homes");
-        System.out.println("  12. Calculate expected cost to own home for a year (excluding mortgage)");
-        System.out.println("  0. Exit");
-        System.out.println("  To choose an option, type in the number next to the option.");
     }
 }
