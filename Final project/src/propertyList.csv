@@ -3,3 +3,6 @@ House,750005.23,2,7,3,227,Bathurst,Toronto,M5J 2C6,3000.0,1000.0,00001,terraced,
 House,1000000.0,2,7,4,300,Palmerston,Toronto,M5S 4M8,4000.0,1500.0,00002,detached,2,450.0
 House,1500000.0,2,10,4,400,Spadina,Toronto,M4A 5B2,4500.0,2500.0,00003,semi-detached,2,500.0
 Townhouse,1250000.0,1,4,2,430,Spadina,Toronto,M4A 5B2,4200.0,1700.0,00005,40,200.0,2
+House,2000000.0,3,10,5,243,Davenport,Toronto,M5R 2A1,5000.0,2000.0,00006,detached,3,500.0
+Apartment,300000.0,0,2,1,334,College,Toronto,M6J 5K3,1000.0,500.0,00007,30,100.23
+Townhouse,800000.0,1,6,3,800,Davenport,Toronto,M6R 3A1,3254.23,1200.54,00008,50,254.32,2

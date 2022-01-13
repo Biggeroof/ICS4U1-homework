@@ -8,21 +8,33 @@ public class Properties
 
     private final ArrayList<Home> propertyList;
 
+    /**
+     * Initializes the propertyList arraylist
+     */
     public Properties()
     {
         propertyList = new ArrayList<>();
     }
 
+    /**
+     * Loads a property list from a file
+     *
+     * @param filename The name of the file to load from
+     * @return Whether the loading is successful or not
+     */
     public boolean loadPropertyList(String filename)
     {
         String row;
         try
         {
+            //reads the file row by row
             BufferedReader reader = new BufferedReader(new FileReader(filename));
             while ((row = reader.readLine()) != null)
             {
+                //split the row into a string array at the commas
                 String[] text = row.split(",");
 
+                //if the home is a house, add a house to the property list
                 if (text[0].equals("House"))
                 {
                     propertyList.add(new House(Double.parseDouble(text[1]), Integer.parseInt(text[2]), Integer.parseInt(text[3]),
@@ -30,6 +42,7 @@ public class Properties
                             Double.parseDouble(text[9]), Double.parseDouble(text[10]), text[11], text[12], Integer.parseInt(text[13]),
                             Double.parseDouble(text[14])));
                 }
+                //if the home is an apartment, add an apartment to the property list
                 else if (text[0].equals("Apartment"))
                 {
                     propertyList.add(new Apartment(Double.parseDouble(text[1]), Integer.parseInt(text[2]), Integer.parseInt(text[3]),
@@ -37,6 +50,7 @@ public class Properties
                             Double.parseDouble(text[9]), Double.parseDouble(text[10]), text[11], Integer.parseInt(text[12]),
                             Double.parseDouble(text[13])));
                 }
+                //if the home is a townhouse, add a townhouse to the property list
                 else if (text[0].equals("Townhouse"))
                 {
                     propertyList.add(new Townhouse(Double.parseDouble(text[1]), Integer.parseInt(text[2]), Integer.parseInt(text[3]),
@@ -46,6 +60,7 @@ public class Properties
                 }
                 else
                 {
+                    //if the type of home is invalid, throw an error that is then caught by the catch
                     throw new IOException();
                 }
             }
@@ -59,13 +74,20 @@ public class Properties
         }
     }
 
+    /**
+     * Saves a property list into a file
+     *
+     * @param filename The name of the file to save into
+     */
     public void savePropertyList(String filename)
     {
         try
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+            //iterate through all the homes currently on the property list
             for (Home temp : propertyList)
             {
+                //check what type the object is and writes it into the file in their respective formats so the file can be read again
                 if (temp instanceof House)
                 {
                     writer.write("House," + temp.price + "," + temp.numParkingSpace + "," + temp.numBedrooms + "," +
@@ -99,26 +121,33 @@ public class Properties
         }
     }
 
+    /**
+     * Changes the info for a home given its listing ID
+     *
+     * @param listId The listing ID of the home
+     * @param input
+     */
     public void changeInfo(String listId, Scanner input)
     {
-        int index = getHomeIndex(listId);
         String option = "0";
         String menuDef = "  1. Price\n  2. Number of parking spaces\n  3. Number of bedrooms\n  4. Number of bathrooms\n" +
                 "  5. Floor area\n  6. Monthly property tax\n";
         String phr;
-        //keep asking for options while option is not valid (less than 1 greater than 7) or for townhouses less than 1 greater than 8
+        Home temp = getHome(listId);
+        //prints the menu and asks the user for an option
+        //repeats until it gets a valid option (1-8 for townhouses and 1-7 for houses and apartments)
         do
         {
-            if(propertyList.get(index) instanceof Townhouse && Integer.parseInt(option) == 8)
+            if(temp instanceof Townhouse && Integer.parseInt(option) == 8)
             {
                 break;
             }
-            if (propertyList.get(index) instanceof House)
+            if (temp instanceof House)
             {
                 phr = "What would you like to change?\n" + menuDef + "  7. Monthly utility fees\n  To choose an option, type in the number next to the option.";
                 option = takeInt(input, phr);
             }
-            else if (propertyList.get(index) instanceof Apartment)
+            else if (temp instanceof Apartment)
             {
                 phr = "What would you like to change?\n" + menuDef + "  7. Monthly maintenance fees\n  To choose an option, type in the number next to the option.";
                 option = takeInt(input, phr);
@@ -128,97 +157,102 @@ public class Properties
                 phr = "What would you like to change?\n" + menuDef + "  7. Monthly maintenance fees\n  8. Number of shared walls\n  To choose an option, type in the number next to the option.";
                 option = takeInt(input, phr);
             }
-            if(Integer.parseInt(option) < 1 || (Integer.parseInt(option) > 7) && !(propertyList.get(index) instanceof Townhouse))
+            if(Integer.parseInt(option) < 1 || (Integer.parseInt(option) > 7) && !(temp instanceof Townhouse))
             {
                 System.out.println("\nInvalid option. Please try again.\n");
             }
         } while (Integer.parseInt(option) < 1 || (Integer.parseInt(option) > 7));
 
-            switch (option)
+        //Changes the printing and what is to be changed based on the option the user chose
+        switch (option)
+        {
+            case "1":
             {
-                case "1":
+                temp.price = Double.parseDouble(takeDouble(input, "What would you like to change the price to?"));
+                System.out.println("The value has been changed.");
+                break;
+            }
+
+            case "2":
+            {
+                temp.numParkingSpace = Integer.parseInt(takeInt(input, "What would you like to change the number of parking spaces to?"));
+                System.out.println("The value has been changed.");
+                break;
+            }
+
+            case "3":
+            {
+                temp.numBedrooms = Integer.parseInt(takeInt(input, "What would you like to change the number of bedrooms to?"));
+                System.out.println("The value has been changed.");
+                break;
+            }
+
+            case "4":
+            {
+                temp.numBathrooms = Integer.parseInt(takeInt(input, "What would you like to change the number of bathrooms to?"));
+                System.out.println("The value has been changed.");
+                break;
+            }
+
+            case "5":
+            {
+                temp.floorArea = Double.parseDouble(takeDouble(input, "What would you like to change the floor area to?"));
+                System.out.println("The value has been changed.");
+                break;
+            }
+
+            case "6":
+            {
+                temp.monthlyPropertyTax = Double.parseDouble(takeDouble(input, "What would you like to change the monthly property tax to?"));
+                System.out.println("The value has been changed.");
+                break;
+            }
+
+            case "7":
+            {
+                if (temp instanceof House)
                 {
-                    propertyList.get(index).price = Double.parseDouble(takeDouble(input, "What would you like to change the price to?"));
+                    ((House)temp).setUtilityFees(Double.parseDouble(takeDouble(input, "What would you like to change the monthly utility fees to?")));
                     System.out.println("The value has been changed.");
                     break;
                 }
-
-                case "2":
+                else if (temp instanceof Apartment)
                 {
-                    propertyList.get(index).numParkingSpace = Integer.parseInt(takeInt(input, "What would you like to change the number of parking spaces to?"));
+                    ((Apartment)temp).setMaintenanceFee(Double.parseDouble(takeDouble(input, "What would you like to change the monthly maintenance fees to?")));
                     System.out.println("The value has been changed.");
                     break;
                 }
-
-                case "3":
+                else
                 {
-                    propertyList.get(index).numBedrooms = Integer.parseInt(takeInt(input, "What would you like to change the number of bedrooms to?"));
-                    System.out.println("The value has been changed.");
-                    break;
-                }
-
-                case "4":
-                {
-                    propertyList.get(index).numBathrooms = Integer.parseInt(takeInt(input, "What would you like to change the number of bathrooms to?"));
-                    System.out.println("The value has been changed.");
-                    break;
-                }
-
-                case "5":
-                {
-                    propertyList.get(index).floorArea = Double.parseDouble(takeDouble(input, "What would you like to change the floor area to?"));
-                    System.out.println("The value has been changed.");
-                    break;
-                }
-
-                case "6":
-                {
-                    propertyList.get(index).monthlyPropertyTax = Double.parseDouble(takeDouble(input, "What would you like to change the monthly property tax to?"));
-                    System.out.println("The value has been changed.");
-                    break;
-                }
-
-                case "7":
-                {
-                    if (propertyList.get(index) instanceof House)
-                    {
-                        ((House) propertyList.get(index)).setUtilityFees(Double.parseDouble(takeDouble(input, "What would you like to change the monthly utility fees to?")));
-                        System.out.println("The value has been changed.");
-                        break;
-                    }
-                    else if (propertyList.get(index) instanceof Apartment)
-                    {
-                        ((Apartment) propertyList.get(index)).setMaintenanceFee(Double.parseDouble(takeDouble(input, "What would you like to change the monthly maintenance fees to?")));
-                        System.out.println("The value has been changed.");
-                        break;
-                    }
-                    else
-                    {
-                        ((Townhouse) propertyList.get(index)).setMaintenanceFee(Double.parseDouble(takeDouble(input, "What would you like to change the monthly maintenance fees to?")));
-                        System.out.println("The value has been changed.");
-                        break;
-                    }
-                }
-
-                case "8":
-                {
-                    ((Townhouse) propertyList.get(index)).setNumSharedWalls(Integer.parseInt(takeInt(input, "What would you like to change the number of shared walls to?")));
+                    ((Townhouse)temp).setMaintenanceFee(Double.parseDouble(takeDouble(input, "What would you like to change the monthly maintenance fees to?")));
                     System.out.println("The value has been changed.");
                     break;
                 }
             }
+
+            case "8":
+            {
+                ((Townhouse)temp).setNumSharedWalls(Integer.parseInt(takeInt(input, "What would you like to change the number of shared walls to?")));
+                System.out.println("The value has been changed.");
+                break;
+            }
+        }
     }
 
-    public void addProperty(Scanner input)
+    /**
+     * Adds a home to the property list
+     *
+     * @param input
+     */
+    public void addHome(Scanner input)
     {
         String option;
         String phr;
         String[] details = new String[14];
         boolean equal;
 
-        //this try catch is so that it displays a different error message saying incorrect option
-        //instead of incorrect input
         phr = "What kind of home would you like to add?\n  1. House\n  2. Apartment\n  3. Townhouse\n  To choose an option, type in the number next to the option.";
+        //prints the menu and asks for an option until the user inputs a valid option
         do
         {
             option = takeInt(input, phr);
@@ -228,8 +262,7 @@ public class Properties
             }
         } while (Integer.parseInt(option) < 1 || Integer.parseInt(option) > 3);
 
-            //input error only shows after all things are inputted because all strings
-            //add
+        //takes input from the user about the information of the new home
             System.out.println("Please enter the following details:");
             details[0] = takeDouble(input, "  Price: ");
             details[1] = takeInt(input, "  Number of parking spaces: ");
@@ -242,12 +275,12 @@ public class Properties
             System.out.println("  City: ");
             System.out.print("> ");
             details[6] = input.nextLine();
-            //postal codes can have different formats so I can't verify these
             System.out.println("  Postal code: ");
             System.out.print("> ");
             details[7] = input.nextLine();
             details[8] = takeDouble(input, "  Floor area: ");
             details[9] = takeDouble(input, "  Monthly property tax: ");
+            //asks the user for a listing ID until the user inputs an ID that doesn't match the other homes
             do
             {
                 equal = false;
@@ -264,7 +297,7 @@ public class Properties
                 }
 
             } while(equal);
-
+            //asks the user for the specific parameters for each home type
             switch (option)
             {
                 case "1":
@@ -317,7 +350,12 @@ public class Properties
             System.out.println("Added.");
     }
 
-    public void removeProperty(String listId)
+    /**
+     * Removes a home from the property list given its listing ID
+     *
+     * @param listId The listing ID of the home to be removed
+     */
+    public void removeHome(String listId)
     {
         Home temp = getHome(listId);
 
@@ -327,6 +365,12 @@ public class Properties
         }
     }
 
+    /**
+     * Returns a home given its listing ID
+     *
+     * @param listId the ID of the home to look for
+     * @return The home if it is found
+     */
     public Home getHome(String listId)
     {
         for (Home i : propertyList)
@@ -337,18 +381,6 @@ public class Properties
             }
         }
         return null;
-    }
-
-    public int getHomeIndex(String listId)
-    {
-        for (int i = 0; i < propertyList.size(); i++)
-        {
-            if (propertyList.get(i).listId.equals(listId))
-            {
-                return i;
-            }
-        }
-        return -1;
     }
 
     public void searchByStreet(String streetName)
@@ -516,7 +548,7 @@ public class Properties
         }
     }
 
-    public String takeInt(Scanner input, String phrase)
+    public static String takeInt(Scanner input, String phrase)
     {
         boolean notValid = true;
         int number = 0;
@@ -538,7 +570,7 @@ public class Properties
         return Integer.toString(number);
     }
 
-    public String takeDouble(Scanner input, String phrase)
+    public static String takeDouble(Scanner input, String phrase)
     {
         boolean notValid = true;
         double number = 0;

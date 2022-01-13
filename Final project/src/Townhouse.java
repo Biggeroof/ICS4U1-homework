@@ -45,6 +45,6 @@ public class Townhouse extends Home
 
     public String toString()
     {
-        return super.toString() + String.format( "\nUnit Number: %d\nMonthly maintenance fees: %.2f\nNumber of Shared Walls: %d\n-------------------------------\n", unitNum, maintenanceFee, numSharedWalls);
+        return super.toString() + String.format( "\nUnit number: %d\nMonthly maintenance fees: %.2f\nNumber of shared walls: %d\n-------------------------------\n", unitNum, maintenanceFee, numSharedWalls);
     }
 }

@@ -13,7 +13,7 @@ public class PropertiesRunner
             "  4. Remove a property\n  5. Edit information for one property\n  6. List all properties\n" +
             "  7. List one property\n  8. Filter properties by attribute\n  9. Sort properties by attribute\n" +
             "  10. Calculate average price of all of the homes\n  11. Calculate average floor area of all of the homes\n  " +
-            "12. Calculate expected cost to own home for a year (excluding mortgage)\n  To choose an option, type in the number next to the option.";
+            "12. Calculate expected cost to own home for a year (excluding mortgage)\n  0. Exit the program\n  To choose an option, type in the number next to the option.";
 
     public static void main(String[] args)
     {
@@ -94,7 +94,7 @@ public class PropertiesRunner
 
                 case "3":
                 {
-                    propertyDatabase.addProperty(input);
+                    propertyDatabase.addHome(input);
                     break;
                 }
 
@@ -105,7 +105,7 @@ public class PropertiesRunner
                     {
                         System.out.print("Listing ID of property to change: ");
                         listID = input.nextLine();
-                        if (propertyDatabase.getHomeIndex(listID) >= 0)
+                        if (propertyDatabase.getHome(listID) != null)
                         {
                             success = true;
                         }
@@ -114,7 +114,7 @@ public class PropertiesRunner
                             System.out.println("\nInvalid listing ID. Please try again.\n");
                         }
                     } while (!success);
-                    propertyDatabase.removeProperty(listID);
+                    propertyDatabase.removeHome(listID);
                     System.out.println("Property successfully removed.");
                     break;
                 }
@@ -126,7 +126,7 @@ public class PropertiesRunner
                     {
                         System.out.print("Listing ID of property to change: ");
                         listID = input.nextLine();
-                        if (propertyDatabase.getHomeIndex(listID) >= 0)
+                        if (propertyDatabase.getHome(listID) != null)
                         {
                             success = true;
                         }
@@ -152,7 +152,7 @@ public class PropertiesRunner
                     {
                         System.out.print("Listing ID of property: ");
                         listID = input.nextLine();
-                        if (propertyDatabase.getHomeIndex(listID) >= 0)
+                        if (propertyDatabase.getHome(listID) != null)
                         {
                             success = true;
                         }
@@ -262,7 +262,7 @@ public class PropertiesRunner
                     {
                         System.out.print("Listing ID of property: ");
                         listID = input.nextLine();
-                        if (propertyDatabase.getHomeIndex(listID) >= 0)
+                        if (propertyDatabase.getHome(listID) != null)
                         {
                             success = true;
                         }
